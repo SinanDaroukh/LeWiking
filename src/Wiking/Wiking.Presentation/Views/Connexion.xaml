@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="Wiking.Presentation.Views.Connexion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:Wiking.Presentation.Converters"
+             xmlns:local="clr-namespace:Wiking.Presentation.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style TargetType="TextBlock" x:Key="StyleTextBlock">
+            <Setter Property="Background" Value="#CEB596"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="StyleTextBlockEnTete">
+            <Setter Property="Background" Value="#AA5908"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Border" x:Key="StyleBorderEnTete">
+            <Setter Property="Background" Value="#AA5908"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="BorderBrush" Value="White"/>
+        </Style>
+        <Style TargetType="Border" x:Key="StyleBorder">
+            <Setter Property="BorderThickness" Value="3,0,3,3"/>
+            <Setter Property="BorderBrush" Value="White"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource StyleBorderEnTete}" Margin="5,5,5,0">
+            <TextBlock Style="{StaticResource StyleTextBlockEnTete}">Connexion</TextBlock>
+        </Border>
+
+        <Border Style="{StaticResource StyleBorder}" Grid.Row="1" Margin="5,0,5,5">
+            <TextBlock Style="{StaticResource StyleTextBlock}" TextWrapping="Wrap">
+                <StackPanel>
+                    <Label>Nom de compte</Label>
+                    <TextBox Foreground="DarkSlateGray" FontStyle="Italic" Text="{Binding Pseudo}"></TextBox>
+                    <Label>Mot de passe</Label>
+                    <TextBox Foreground="DarkSlateGray" FontStyle="Italic" Text="{Binding MotDePasse}"></TextBox>
+                </StackPanel>
+                <LineBreak/>
+                <LineBreak/>
+                *Se connecter permet de pouvoir ajouter, supprimer ou modifier un élément du wiki.
+                <LineBreak/>
+                <LineBreak/>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Foreground="Red" Visibility="{Binding IsConnectionFailedVisible, Converter={StaticResource BooleanToVisibilityConverter}}">Connexion impossible : pseudo ou mot de passe incorrect.</TextBlock>
+            </TextBlock>
+        </Border>
+
+        <Border Style="{StaticResource StyleBorderEnTete}" Grid.Column="1" Margin="5,5,5,0">
+            <TextBlock Style="{StaticResource StyleTextBlockEnTete}">Création d'un compte</TextBlock>
+        </Border>
+        <Border Style="{StaticResource StyleBorder}" Grid.Row="1" Grid.Column="1" Margin="5,0,5,5">
+            <TextBlock Style="{StaticResource StyleTextBlock}">
+                    <StackPanel>
+                        <Label >Nom de compte</Label>
+                        <TextBox Foreground="DarkSlateGray" FontStyle="Italic" Text="{Binding Login}"></TextBox>
+                        <Label >Mot de passe</Label>
+                        <TextBox Foreground="DarkSlateGray" FontStyle="Italic" Text="{Binding Mdp1}"></TextBox>
+                        <Label>Confirmation du mot de passe</Label>
+                        <TextBox Foreground="DarkSlateGray" FontStyle="Italic" Text="{Binding Mdp2}"></TextBox>
+                    </StackPanel>
+                    <LineBreak/>
+                    <LineBreak/>
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Foreground="Red" Visibility="{Binding IsDifferentPasswordVisible, Converter={StaticResource BooleanToVisibilityConverter}}">Création de compte impossible : les mots de passes entrés ne sont pas les mêmes.</TextBlock>
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Visibility="{Binding IsAccountCreationSucceededVisible, Converter={StaticResource BooleanToVisibilityConverter}}">Le compte a bien été créé.</TextBlock>
+            </TextBlock>
+        </Border>
+    </Grid>
+</UserControl>

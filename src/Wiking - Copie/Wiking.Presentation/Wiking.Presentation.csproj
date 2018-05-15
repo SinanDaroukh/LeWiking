@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F4ED4BA-8DAC-4E22-9982-0B4799723337}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Wiking.Presentation</RootNamespace>
+    <AssemblyName>Wiking.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="ViewModel\AccueilViewModel.cs" />
+    <Compile Include="ViewModel\ConnectionViewModel.cs" />
+    <Compile Include="ViewModel\OngletViewModel.cs" />
+    <Compile Include="ViewModel\PortfolioViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="Views\Accueil.xaml.cs">
+      <DependentUpon>Accueil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Connection.xaml.cs">
+      <DependentUpon>Connection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Connexion.xaml.cs">
+      <DependentUpon>Connexion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreationArme.xaml.cs">
+      <DependentUpon>CreationArme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreationDivinite.xaml.cs">
+      <DependentUpon>CreationDivinite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreationNavire.xaml.cs">
+      <DependentUpon>CreationNavire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreationUCDefaut.xaml.cs">
+      <DependentUpon>CreationUCDefaut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreationViking.xaml.cs">
+      <DependentUpon>CreationViking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailUC.xaml.cs">
+      <DependentUpon>DetailUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModificationViking.xaml.cs">
+      <DependentUpon>ModificationViking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Onglet.xaml.cs">
+      <DependentUpon>Onglet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Portfolio.xaml.cs">
+      <DependentUpon>Portfolio.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\Accueil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Connection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Connexion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreationArme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreationDivinite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreationNavire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreationUCDefaut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreationViking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DetailUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\SimpleCommand.cs" />
+    <Page Include="Views\ModificationViking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Onglet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Portfolio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\banniereViking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\banniere.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\house.png" />
+    <Resource Include="Images\paysage.jpg" />
+    <Resource Include="Images\swords.png" />
+    <Resource Include="Images\thor.png" />
+    <Resource Include="Images\viking-ship.png" />
+    <Resource Include="Images\viking.jpg" />
+    <Resource Include="Images\viking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\test.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\viking2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bann1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bann2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imageTitre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bann3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wiking\Wiking.csproj">
+      <Project>{efcf9527-f677-401b-b871-64f907dc027f}</Project>
+      <Name>Wiking</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ragnar.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sparto.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\abdd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\lagartha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\khaldrogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sinanos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fabienos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icone.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\informations.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arthur.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

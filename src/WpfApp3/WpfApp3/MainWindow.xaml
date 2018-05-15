@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="DockPanel" Height="350" Width="525">
+    <DockPanel>
+        <Image Source="pack://application:,,,/WpfApp3;component/Images/banniere.jpg" Margin="4,4,4,4" DockPanel.Dock="Top"></Image>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="5,5,5,5">
+            <Button Content="Menu" Margin="0,0,5,0" Background="Gray"/>
+            <Button Content="Rechercher une page" Margin="0,0,5,0" Background="Gray"/>
+            <Button Content="Profil" Margin="0,0,5,0" Background="Gray"/>
+        </StackPanel>
+        <TextBlock DockPanel.Dock="Bottom" TextAlignment="Center" Background="Gray" Foreground="White">Created by Sinan Daroukh and Fabien Simonet</TextBlock>
+        <StackPanel Background="LightGray" Width="150">
+            <Button Background="Bisque">
+                <StackPanel Orientation="Horizontal" Width="150">
+                    <Image Source="pack://application:,,,/WpfApp3;component/Images/viking.png" Margin="4,4,4,4" Height="20" Width="20"></Image>
+                    <TextBlock FontSize="20" HorizontalAlignment="Right">Viking</TextBlock>
+                </StackPanel>
+            </Button>
+            <StackPanel Background="LightGray" Width="150">
+                <Button Background="Bisque">
+                    <StackPanel Orientation="Horizontal" Width="150">
+                        <Image Source="pack://application:,,,/WpfApp3;component/Images/swords.png" Margin="4,4,4,4" Height="20" Width="20"></Image>
+                        <TextBlock FontSize="20" HorizontalAlignment="Right">Arme</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Background="LightGray" Width="150">
+                <Button Background="Bisque">
+                    <StackPanel Orientation="Horizontal" Width="150">
+                        <Image Source="pack://application:,,,/WpfApp3;component/Images/thor.png" Margin="4,4,4,4" Height="20" Width="20"></Image>
+                        <TextBlock FontSize="20" HorizontalAlignment="Right">Divinité</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Background="LightGray" Width="150">
+                <Button Background="Bisque">
+                    <StackPanel Orientation="Horizontal" Width="150">
+                        <Image Source="pack://application:,,,/WpfApp3;component/Images/house.png" Margin="4,4,4,4" Height="20" Width="20"></Image>
+                        <TextBlock FontSize="20" HorizontalAlignment="Right">Tribu</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Background="LightGray" Width="150">
+                <Button Background="Bisque">
+                    <StackPanel Orientation="Horizontal" Width="150">
+                        <Image Source="pack://application:,,,/WpfApp3;component/Images/viking-ship.png" Margin="4,4,4,4" Height="20" Width="20"></Image>
+                        <TextBlock FontSize="20" HorizontalAlignment="Right">Navire</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <Button Content="LastChildFill=True"/>
+    </DockPanel>
+</Window>

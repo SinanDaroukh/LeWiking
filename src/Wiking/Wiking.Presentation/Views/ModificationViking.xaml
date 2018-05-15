@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Wiking.Presentation.Views.ModificationViking"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Wiking.Presentation.Views"
+             xmlns:converters="clr-namespace:Wiking.Presentation.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style TargetType="TextBlock" x:Key="StyleTextBlockEnTete">
+            <Setter Property="Background" Value="#AA5908"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Border" x:Key="StyleBorderEnTete">
+            <Setter Property="Background" Value="#AA5908"/>
+            <Setter Property="BorderThickness" Value="0,0,0,3"/>
+            <Setter Property="BorderBrush" Value="White"/>
+        </Style>
+    </UserControl.Resources>
+    <Border BorderThickness="3" BorderBrush="White" Margin="5">
+        <Grid Background="#CEB596">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Border Style="{StaticResource StyleBorderEnTete}" Grid.ColumnSpan="4">
+                <TextBlock Style="{StaticResource StyleTextBlockEnTete}">Modification d'un viking</TextBlock>
+            </Border>
+            <Label Content="Impossible de modifier le viking car tous les champs ne sont pas remplis." Visibility="{Binding IsTextBoxModificationImpossibleVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Grid.Row="1" Grid.ColumnSpan="4"/>
+            <Label Content="Le viking a bien été modifié" Visibility="{Binding IsTextBoxModificationReussieVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Grid.Row="1" Grid.ColumnSpan="4"/>
+            <Label Content="Nom :" Grid.Row="2"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Height="20" Text="{Binding VikingUpdated.Name}" Name="TB"></TextBox>
+            <Label Content="Sexe" Grid.Row="2" Grid.Column="2"></Label>
+            <ComboBox Grid.Row="2" Grid.Column="3" Height="20" SelectedItem="{Binding VikingUpdated.Sexe}" ItemsSource="{Binding ListEnum}"/>
+            <Label Content="Image :" Grid.Row="3"></Label>
+            <Image Source="{Binding VikingUpdated.Path, Mode=TwoWay}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" MaxHeight="100"></Image>
+            <Button Grid.Row="3" Grid.Column="1" Content="Parcourir" Command="{Binding RecuperationImagePourModification}" Height="25" VerticalAlignment="Top"></Button>
+            <Label Content="Père :" Grid.Row="4"></Label>
+            <TextBox Grid.Row="4" Grid.Column="1" Height="20" Text="{Binding VikingUpdated.Pere}"></TextBox>
+            <Label Content="Mère :" Grid.Row="4" Grid.Column="2"></Label>
+            <TextBox Grid.Row="4" Grid.Column="3" Height="20" Text="{Binding VikingUpdated.Mere}"></TextBox>
+            <Label Content="Date de naissance :" Grid.Row="5"></Label>
+            <TextBox Grid.Row="5" Grid.Column="1" Height="20" Text="{Binding VikingUpdated.Dtn}"></TextBox>
+            <Label Content="Date de décès :" Grid.Row="5" Grid.Column="2"></Label>
+            <TextBox Grid.Row="5" Grid.Column="3" Height="20" Text="{Binding VikingUpdated.Dtd}"></TextBox>
+            <StackPanel Grid.Row="6" Grid.ColumnSpan="4">
+                <Label Content="Description brève :"></Label>
+                <TextBox Height="50" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding VikingUpdated.Text1}"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.ColumnSpan="4">
+                <Label Content="Description complète :"></Label>
+                <TextBox Height="200" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding VikingUpdated.Text2}"></TextBox>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,25 @@
+# Description du diagramme de cas d'utilisation
+
+	Ce fichier est lié au diagramme du cas d'utilisation, et à pour but de les clarifier, si ce dernier vous semble flous.
+
+Ainsi, notre diagramme d'utlisation se compose de deux fichiers :
+- l'un prenant en compte les différents acteurs (UserCase.dia)
+- l'autre ne les prenant pas en compte dans un soucis de lisibilité (UserCase2.dia)
+
+Explication dans les grandes lignes des premiers diagrammes de classe :
+
+	Le visiteur est le profil principal, l'utilisateur hérite des droits du visteur, et l'administrateur hérite des droits de l'utilsateur.
+
+	Les fonctionnalités de l'application se découpe en 3 packages :
+		- src (ou system) contenant les fonctionnalités vitales comme "Créer un compte", "Se connecter/Déconnecter" , "Modifier son profil" et "Ajouter des favoris"
+		- Recherche contenant le moteur de recherche et le système de consultation d'onglets.
+		- Entité comprenant l'aspect participatif de l'apllication, la création d'entité, l'édition, la suppression, ainsi que la confirmation de ces modifications.
+
+	Chaque profil peut réaliser les actions du package Recherche.
+	L'utilisateur peut réaliser toutes les actions du packages Entité, sauf "Accepter/Refuser une modification" étant réservé à l'administration.
+	L'administrateur peut réaliser la totalité de tous les packages.
+
+
+Il est possible que ces diagrammes subissent des modifications, au cours du développement.
+
+Sinan DAROUKH et Fabien SIMONET.

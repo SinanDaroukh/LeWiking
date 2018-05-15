@@ -1,0 +1,31 @@
+﻿# Description du contexte
+
+Introduction :
+
+	Wiking est une idée d'application conçue par Sinan Daroukh et Fabien Simonet. Le concept se veut assez original sur un thème qui est très peu traité. 
+Le but de l'application est relativement simple. C'est une encyclopédie participative sur les vikings, d'où le nom de cette dernière : "Wiking", une contraction entre wiki et vikings.
+
+Structure de l'application :
+
+a) Les articles
+ 
+	L'application comprendra donc des articles, qui seront répartis par thématique : Divinités, Vikings, Bateaux, Tribus, etc. Ces articles seront consultables via des onglets ou 
+une barre de recherche.	Ces articles pourront être créés, consultés, modifiés, supprimés. Ils contiennent des informations qui seront enregistrées dans une base de données. 
+
+b) Les profils
+
+	Plusieurs profils seront disponibles : Visiteur, Utilisateur et Administrateur. Ainsi, le profil Visiteur est celui par défaut. Pour accéder aux autres profils, 
+il faut se connecter en ayant créé un compte au préalable. 
+
+La disponibilité des fonctionnalités de l'application est restreinte en fonction du type de profil utilisé. En effet, cela permet une meilleure stabilité et durabilité de cette dernière.
+
+Profil visiteur : 
+	chaque visteur pourra consulter les articles, se créer un compte dans le but de pouvoir à son tour soumettre des articles.
+
+Profil utilisateur :
+	chaque utilisateur sera à même de rechercher des articles, soumettre un article sur notre base de données, consulter les documents étant déjà présents sur la base de données, composer 
+sa page de favoris contenant ses articles et items préférés.
+
+Profil administrateur : 
+	les administrateurs peuvent valider ou rejeter les modifications d'articles soumises par les utilisateurs, et effectuer toutes actions faisables par le profil utilisateur (promotion d'un utilisateur en administrateur 
+si le temps le permet).
